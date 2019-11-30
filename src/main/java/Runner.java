@@ -41,7 +41,7 @@ public class Runner {
         System.out.println("- Myrddin, the magician of the wild woods.");
         System.out.println("He can cast a spell of fire and is protected by wild boar spirit, Twrch Trwyth.");
         System.out.println();
-        System.out.println("Enter the name of the player you wish to be.");
+        System.out.println("Enter the name of the player you wish to be (Rhydderch is the default choice).");
 
         String input = scanner.next();
 
@@ -60,6 +60,25 @@ public class Runner {
         }
 
         System.out.println("You are playing as " + game.getPlayer().getName());
+        System.out.println();
+
+        System.out.println("Enter 's' to start your journey.");
+        String input2 = scanner.next();
+        System.out.println();
+
+
+
+        game.start();
+
+        for(Room room : rooms){
+            System.out.println("You are now in the kingdom of " + room.getName());
+//            if(room.getEnemy() != null){
+//                fight(room);
+//            }
+//            if(room.getTreasureType() != null){
+//                takeTreasure(room);
+//            }
+        }
 
     }
 }

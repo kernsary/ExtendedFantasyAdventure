@@ -46,7 +46,7 @@ public class Game {
         Room room6 = new Room("Mannaw", TreasureType.JEWELS, null);
         Room room7 = new Room("Ulaid", TreasureType.GOLD, null);
         Room room8 = new Room("Elfed", TreasureType.JEWELS, null);
-        Room room9 = new Room("Gododdin", TreasureType.SILVER, null);
+        Room room9 = new Room("Gwynedd", TreasureType.SILVER, null);
         addRoom(room1);
         addRoom(room2);
         addRoom(room3);
