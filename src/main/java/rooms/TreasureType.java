@@ -1,8 +1,9 @@
 package rooms;
 
 public enum TreasureType {
-    GOLD(10),
-    JEWELS(5);
+    GOLD(1),
+    JEWELS(1),
+    SILVER(1);
 
     private final int value;
 

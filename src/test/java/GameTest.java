@@ -100,27 +100,27 @@ public class GameTest {
     }
 
     @Test
-    public void warriorCanGetTreasure(){
+    public void warriorCanTakeTreasure(){
         rooms.add(treasureRoom);
         game = new Game(warrior, rooms);
-        game.getTreasure(treasureRoom);
-        assertEquals(10, warrior.getTreasurePoints());
+        game.takeTreasure(treasureRoom);
+        assertEquals(1, warrior.getTreasurePoints());
     }
 
     @Test
-    public void magicianCanGetTreasure(){
+    public void magicianCanTakeTreasure(){
         rooms.add(treasureRoom);
         game = new Game(magician, rooms);
-        game.getTreasure(treasureRoom);
-        assertEquals(10, magician.getTreasurePoints());
+        game.takeTreasure(treasureRoom);
+        assertEquals(1, magician.getTreasurePoints());
     }
 
     @Test
-    public void healerCanGetTreasure(){
+    public void healerCanTakeTreasure(){
         rooms.add(treasureRoom);
         game = new Game(healer, rooms);
-        game.getTreasure(treasureRoom);
-        assertEquals(10, healer.getTreasurePoints());
+        game.takeTreasure(treasureRoom);
+        assertEquals(1, healer.getTreasurePoints());
     }
 
     @Test
@@ -130,7 +130,7 @@ public class GameTest {
         game = new Game(warrior, rooms);
         game.passThroughRooms();
         assertEquals(95, warrior.getHealthPoints());
-        assertEquals(10, warrior.getTreasurePoints());
+        assertEquals(1, warrior.getTreasurePoints());
     }
 
     @Test
@@ -138,7 +138,7 @@ public class GameTest {
         rooms.add(enemyRoom);
         rooms.add(treasureRoom);
         game = new Game(warrior, rooms);
-        assertEquals("Congratulations! You have completed the quest! You have won 10 treasure points.", game.playQuest());
+        assertEquals("Congratulations! You have completed the quest! You have won 1 treasure points.", game.playQuest());
     }
 
     @Test
@@ -147,6 +147,13 @@ public class GameTest {
         warrior.setHealthPoints(3);
         game = new Game(warrior, rooms);
         assertEquals("Sorry, you didn't survive the quest.", game.playQuest());
+    }
+
+    @Test
+    public void gameStartsWithFiveRooms(){
+        game = new Game(null, rooms);
+        game.start();
+        assertEquals(5, rooms.size());
     }
 
 
