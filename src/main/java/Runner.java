@@ -69,14 +69,19 @@ public class Runner {
 
         for(Room room : rooms){
             System.out.println("You are now in the kingdom of " + room.getName());
+
             if(room.getTreasureType() != null){
                 System.out.println("There is " + room.getTreasureType().getName() + " here");
+            }
+            else
+            {
+                System.out.println("There is no treasure here");
             }
             if(room.getEnemy() != null){
                 System.out.println("Your enemy " + room.getEnemy().getName() + " is here. You must fight");
                 game.fight(room);
                 if(game.getPlayer().getHealthPoints() <= 0) {
-                    System.out.println("You have been defeated. Your quest is over");
+                    System.out.println("Your life force is gone. Your quest is over");
                     return;
                 }
                 else {
@@ -93,8 +98,34 @@ public class Runner {
             System.out.println("You have " + game.getPlayer().getTreasurePoints() + " treasure points");
             System.out.println();
 
-            System.out.println("Enter 's' to continue your journey.");
-            String input3 = scanner.next();
+            if(room.getOtherPlayer() != null && room.getOtherPlayer() instanceof Healer){
+                System.out.println("There is a healer in the room.");
+                if(game.getPlayer().getTreasurePoints() >= 20){
+                    System.out.println("Do you want the healer to heal you, for 20 treasure points?");
+                    System.out.println("If you are healed, your life force will increase by 20");
+                    System.out.println("Enter y to be healed, any other key if not");
+                    String input3 = scanner.next();
+
+                    if(input3.equals("y")){
+                        Healer roomHealer = ((Healer) room.getOtherPlayer());
+                        Player player = game.getPlayer();
+                        player.beHealed(roomHealer);
+                        System.out.println("Your life force is " + game.getPlayer().getHealthPoints());
+                        System.out.println("You have " + game.getPlayer().getTreasurePoints() + " treasure points");
+                        System.out.println();
+                    }
+                    else {
+                        System.out.println("You have chosen not to be healed");
+                    }
+                }
+                else
+                {
+                    System.out.println("But you do not have enough treasure points to pay");
+                }
+            }
+
+            System.out.println("Enter 'c' to continue your journey.");
+            String input4 = scanner.next();
             System.out.println();
         }
 

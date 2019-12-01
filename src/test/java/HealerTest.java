@@ -50,11 +50,6 @@ public class HealerTest {
             assertEquals(healingTool, healer.getHealingTool());
         }
 
-        @Test
-        public void canGetPaidForHealing(){
-            healer.getPaidForHealing();
-            assertEquals(10, healer.getTreasurePoints());
-        }
 
         @Test
         public void canSetHealingTool() {
@@ -113,9 +108,16 @@ public class HealerTest {
         @Test
         public void canBeHealed(){
             healer.beHealed(healer2);
-            assertEquals(110, healer.getHealthPoints());
-            assertEquals(10, healer2.getTreasurePoints());
+            assertEquals(120, healer.getHealthPoints());
+            assertEquals(20, healer2.getTreasurePoints());
         }
+
+       @Test
+       public void canGetPaidForHealing(){
+          healer.getPaidForHealing();
+          assertEquals(20, healer.getTreasurePoints());
+    }
+
 
 
 }

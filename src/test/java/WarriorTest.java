@@ -111,7 +111,7 @@ public class WarriorTest {
     @Test
     public void canBeHealed(){
         warrior.beHealed(doctor);
-        assertEquals(110, warrior.getHealthPoints());
-        assertEquals(10, doctor.getTreasurePoints());
+        assertEquals(120, warrior.getHealthPoints());
+        assertEquals(20, doctor.getTreasurePoints());
     }
 }

@@ -21,6 +21,7 @@ public class GameTest {
     private Warrior warrior;
     private Magician magician;
     private Healer healer;
+    private Healer otherHealer;
     private Room enemyRoom;
     private Room treasureRoom;
     private Enemy enemy;
@@ -28,20 +29,23 @@ public class GameTest {
     private Spell spell;
     private Creature creature;
     private HealingTool healingTool;
+    private HealingTool otherHealingTool;
     private ArrayList<Room> rooms;
 
     @Before
     public void before(){
-        enemy = new Enemy("Grog");
-        enemyRoom = new Room("Hopper", null, enemy);
-        treasureRoom = new Room("Sinclair", TreasureType.GOLD, null);
+        enemy = new Enemy("Grog", 10);
+        enemyRoom = new Room("Hopper", null, enemy, otherHealer);
+        treasureRoom = new Room("Sinclair", TreasureType.GOLD, null, null);
         weapon = new Weapon("Dyrnwyn");
         spell = new Spell("Gotcha");
         creature = new Creature("Fido");
         healingTool = new HealingTool("Micropore");
+        otherHealingTool = new HealingTool("Cross");
         warrior = new Warrior("Alan", weapon);
         magician = new Magician("Paula", spell, creature);
         healer = new Healer("Jim", healingTool);
+        otherHealer = new Healer("Colm Cille", otherHealingTool);
         rooms = new ArrayList<Room>();
     }
 
@@ -155,6 +159,5 @@ public class GameTest {
         game.start();
         assertEquals(5, rooms.size());
     }
-
 
 }

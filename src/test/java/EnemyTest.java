@@ -10,7 +10,7 @@ public class EnemyTest {
 
     @Before
     public void before(){
-        enemy = new Enemy("Grog");
+        enemy = new Enemy("Grog", 10);
     }
 
     @Test

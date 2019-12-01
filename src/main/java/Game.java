@@ -1,7 +1,9 @@
 import enemies.Enemy;
+import players.Healer;
 import players.Player;
 import rooms.Room;
 import rooms.TreasureType;
+import tools.HealingTool;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,6 +11,8 @@ import java.util.Collections;
 public class Game {
 
     private Player player;
+    private HealingTool healingTool;
+    private Healer healer;
     private ArrayList<Room> rooms;
 
     public Game(Player player, ArrayList<Room> rooms){
@@ -33,20 +37,22 @@ public class Game {
     }
 
     public void start(){
-        Enemy enemy1 = new Enemy("Aedan mac Gabrain");
-        Enemy enemy2 = new Enemy("Theodric");
-        Enemy enemy3 = new Enemy("Gartnait");
-        Enemy enemy4 = new Enemy("Urien");
-        Enemy enemy5 = new Enemy("Clyddno Eiddin");
-        Room room1 = new Room("Dal Riata", null, enemy1);
-        Room room2 = new Room("Bryneich", TreasureType.SILVER, enemy2);
-        Room room3 = new Room("Fortriu", null, enemy3);
-        Room room4 = new Room("Rheged", TreasureType.GOLD, enemy4);
-        Room room5 = new Room("Gododdin", null, enemy5);
-        Room room6 = new Room("Mannaw", TreasureType.JEWELS, null);
-        Room room7 = new Room("Circinn", TreasureType.GOLD, null);
-        Room room8 = new Room("Fotla", TreasureType.JEWELS, null);
-        Room room9 = new Room("Fib", TreasureType.SILVER, null);
+        Enemy enemy1 = new Enemy("Aedan mac Gabrain", 50);
+        Enemy enemy2 = new Enemy("Theodric", 40);
+        Enemy enemy3 = new Enemy("Gartnait", 30);
+        Enemy enemy4 = new Enemy("Urien", 25);
+        Enemy enemy5 = new Enemy("Clyddno Eiddin", 20);
+        HealingTool healingTool = new HealingTool("cross");
+        Healer healer = new Healer("Colm Cille", healingTool);
+        Room room1 = new Room("Dal Riata", null, enemy1, healer);
+        Room room2 = new Room("Bryneich", TreasureType.SILVER, enemy2, null);
+        Room room3 = new Room("Fortriu", null, enemy3, healer);
+        Room room4 = new Room("Rheged", TreasureType.GOLD, enemy4, null);
+        Room room5 = new Room("Gododdin", null, enemy5, null);
+        Room room6 = new Room("Manaw", TreasureType.JEWELS, null, healer);
+        Room room7 = new Room("Circinn", TreasureType.GOLD, null, null);
+        Room room8 = new Room("Fotla", TreasureType.JEWELS, null, healer);
+        Room room9 = new Room("Fib", TreasureType.SILVER, null, null);
         addRoom(room1);
         addRoom(room2);
         addRoom(room3);

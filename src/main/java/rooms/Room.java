@@ -1,17 +1,20 @@
 package rooms;
 
 import enemies.Enemy;
+import players.Player;
 
 public class Room {
 
     private String name;
     private TreasureType treasuretype;
     private Enemy enemy;
+    private Player otherPlayer;
 
-    public Room(String name, TreasureType treasureType, Enemy enemy){
+    public Room(String name, TreasureType treasureType, Enemy enemy, Player otherPlayer){
         this.name = name;
         this.treasuretype = treasureType;
         this.enemy = enemy;
+        this.otherPlayer = otherPlayer;
     }
 
     public String getName() {
@@ -25,5 +28,7 @@ public class Room {
     public Enemy getEnemy() {
         return this.enemy;
     }
+
+    public Player getOtherPlayer(){ return this.otherPlayer;}
 
 }

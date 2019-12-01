@@ -125,8 +125,8 @@ public class MagicianTest {
         @Test
         public void canBeHealed(){
             magician.beHealed(doctor);
-            assertEquals(110, magician.getHealthPoints());
-            assertEquals(10, doctor.getTreasurePoints());
+            assertEquals(120, magician.getHealthPoints());
+            assertEquals(20, doctor.getTreasurePoints());
         }
 
 

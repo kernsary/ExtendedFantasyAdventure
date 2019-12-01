@@ -69,7 +69,8 @@ public abstract class Player {
     }
 
     public void beHealed(Healer healer){
-        increaseHealthPoints(10);
+        increaseHealthPoints(20);
+        increaseTreasurePoints(-20);
         healer.getPaidForHealing();
     }
 }

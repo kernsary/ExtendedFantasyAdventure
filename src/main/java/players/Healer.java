@@ -20,6 +20,6 @@ public class Healer extends Player{
     }
 
     public void getPaidForHealing(){
-        increaseTreasurePoints(10);
+        increaseTreasurePoints(20);
     }
 }
