@@ -32,7 +32,7 @@ public class Runner {
         System.out.println("Will you survive?");
         System.out.println();
         System.out.println("Will you play as:");
-        System.out.println(" - Rhydderch, King of Dumbarton Rock, a mighty warrior.");
+        System.out.println("- Rhydderch, King of Dumbarton Rock, a mighty warrior.");
         System.out.println("His strength is in his sword Dyrnwyn, which blazes with fire.");
         System.out.println("- Cynderyn, the holy man, founder of Glas Cau.");
         System.out.println("He can heal himself and others with his sacred bell.");
