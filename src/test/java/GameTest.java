@@ -104,7 +104,7 @@ public class GameTest {
         rooms.add(treasureRoom);
         game = new Game(warrior, rooms);
         game.takeTreasure(treasureRoom);
-        assertEquals(1, warrior.getTreasurePoints());
+        assertEquals(20, warrior.getTreasurePoints());
     }
 
     @Test
@@ -112,7 +112,7 @@ public class GameTest {
         rooms.add(treasureRoom);
         game = new Game(magician, rooms);
         game.takeTreasure(treasureRoom);
-        assertEquals(1, magician.getTreasurePoints());
+        assertEquals(20, magician.getTreasurePoints());
     }
 
     @Test
@@ -120,7 +120,7 @@ public class GameTest {
         rooms.add(treasureRoom);
         game = new Game(healer, rooms);
         game.takeTreasure(treasureRoom);
-        assertEquals(1, healer.getTreasurePoints());
+        assertEquals(20, healer.getTreasurePoints());
     }
 
     @Test
@@ -130,7 +130,7 @@ public class GameTest {
         game = new Game(warrior, rooms);
         game.passThroughRooms();
         assertEquals(95, warrior.getHealthPoints());
-        assertEquals(1, warrior.getTreasurePoints());
+        assertEquals(20, warrior.getTreasurePoints());
     }
 
     @Test
@@ -138,7 +138,7 @@ public class GameTest {
         rooms.add(enemyRoom);
         rooms.add(treasureRoom);
         game = new Game(warrior, rooms);
-        assertEquals("Congratulations! You have completed the quest! You have won 1 treasure points.", game.playQuest());
+        assertEquals("Congratulations! You have completed the quest! You have won 20 treasure points.", game.playQuest());
     }
 
     @Test

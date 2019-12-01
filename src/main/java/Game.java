@@ -40,13 +40,13 @@ public class Game {
         Enemy enemy5 = new Enemy("Clyddno Eiddin");
         Room room1 = new Room("Dal Riata", null, enemy1);
         Room room2 = new Room("Bryneich", TreasureType.SILVER, enemy2);
-        Room room3 = new Room("Alba", null, enemy3);
+        Room room3 = new Room("Fortriu", null, enemy3);
         Room room4 = new Room("Rheged", TreasureType.GOLD, enemy4);
         Room room5 = new Room("Gododdin", null, enemy5);
         Room room6 = new Room("Mannaw", TreasureType.JEWELS, null);
-        Room room7 = new Room("Ulaid", TreasureType.GOLD, null);
-        Room room8 = new Room("Elfed", TreasureType.JEWELS, null);
-        Room room9 = new Room("Gwynedd", TreasureType.SILVER, null);
+        Room room7 = new Room("Circinn", TreasureType.GOLD, null);
+        Room room8 = new Room("Fotla", TreasureType.JEWELS, null);
+        Room room9 = new Room("Fib", TreasureType.SILVER, null);
         addRoom(room1);
         addRoom(room2);
         addRoom(room3);

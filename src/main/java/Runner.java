@@ -34,12 +34,12 @@ public class Runner {
         System.out.println("Will you survive?");
         System.out.println();
         System.out.println("Will you play as:");
-        System.out.println(" - Rhydderch, King of Dumbarton Rock, an mighty warrior.");
+        System.out.println(" - Rhydderch, King of Dumbarton Rock, a mighty warrior.");
         System.out.println("His strength is in his sword Dyrnwyn, which blazes with fire.");
         System.out.println("- Cynderyn, the holy man, founder of Glas Cau.");
         System.out.println("He can heal himself and others with his sacred bell.");
         System.out.println("- Myrddin, the magician of the wild woods.");
-        System.out.println("He can cast a spell of fire and is protected by wild boar spirit, Twrch Trwyth.");
+        System.out.println("He can cast a spell of fire and is protected by a wild boar spirit, Twrch Trwyth.");
         System.out.println();
         System.out.println("Enter the name of the player you wish to be (Rhydderch is the default choice).");
 
@@ -47,38 +47,58 @@ public class Runner {
 
 
         if(input.equals("Rhydderch")){
-//            Warrior warrior = new Warrior("Rhydderch", weapon);
             game.setPlayer(warrior);
         }
         if(input.equals("Cynderyn")){
-//            Healer healer = new Healer("Cynderyn", healingTool);
             game.setPlayer(healer);
         }
         if(input.equals("Myrddin")){
-//            Magician magician = new Magician("Myrddin", spell, creature);
             game.setPlayer(magician);
         }
 
         System.out.println("You are playing as " + game.getPlayer().getName());
+        System.out.println("Your life force is " + game.getPlayer().getHealthPoints());
+        System.out.println("You have " + game.getPlayer().getTreasurePoints() + " treasure points");
         System.out.println();
 
         System.out.println("Enter 's' to start your journey.");
         String input2 = scanner.next();
         System.out.println();
 
-
-
         game.start();
 
         for(Room room : rooms){
             System.out.println("You are now in the kingdom of " + room.getName());
-//            if(room.getEnemy() != null){
-//                fight(room);
-//            }
-//            if(room.getTreasureType() != null){
-//                takeTreasure(room);
-//            }
+            if(room.getTreasureType() != null){
+                System.out.println("There is " + room.getTreasureType().getName() + " here");
+            }
+            if(room.getEnemy() != null){
+                System.out.println("Your enemy " + room.getEnemy().getName() + " is here. You must fight");
+                game.fight(room);
+                if(game.getPlayer().getHealthPoints() <= 0) {
+                    System.out.println("You have been defeated. Your quest is over");
+                    return;
+                }
+                else {
+                    System.out.println("You have defeated " + room.getEnemy().getName());
+                }
+            }
+
+            if(room.getTreasureType() != null){
+                game.takeTreasure(room);
+                System.out.println("You have the treasure");
+            }
+
+            System.out.println("Your life force is " + game.getPlayer().getHealthPoints());
+            System.out.println("You have " + game.getPlayer().getTreasurePoints() + " treasure points");
+            System.out.println();
+
+            System.out.println("Enter 's' to continue your journey.");
+            String input3 = scanner.next();
+            System.out.println();
         }
+
+        System.out.println("You have completed your quest, and have " + game.getPlayer().getTreasurePoints() + " treasure points!");
 
     }
 }
