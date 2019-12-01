@@ -39,7 +39,7 @@ public class MagicianTest {
 
         @Test
         public void canGetStrengthPoints() {
-            assertEquals(2, magician.getStrengthPoints());
+            assertEquals(8, magician.getStrengthPoints());
         }
 
         @Test
@@ -49,7 +49,7 @@ public class MagicianTest {
 
         @Test
         public void canGetDamageReduction() {
-            assertEquals(3, magician.getDamageReduction());
+            assertEquals(10, magician.getDamageReduction());
         }
 
         @Test
@@ -107,7 +107,7 @@ public class MagicianTest {
         @Test
         public void canIncreaseStrengthPoints() {
             magician.increaseStrengthPoints(90);
-            assertEquals(92, magician.getStrengthPoints());
+            assertEquals(98, magician.getStrengthPoints());
         }
 
         @Test
@@ -119,7 +119,7 @@ public class MagicianTest {
         @Test
         public void canIncreaseDamageReduction() {
             magician.increaseDamageReduction(90);
-            assertEquals(93, magician.getDamageReduction());
+            assertEquals(100, magician.getDamageReduction());
         }
 
         @Test

@@ -20,7 +20,7 @@ public class CreatureTest {
 
     @Test
     public void canGetProtectionPower() {
-        assertEquals(3, creature.getProtectionPower());
+        assertEquals(10, creature.getProtectionPower());
     }
 
     @Test

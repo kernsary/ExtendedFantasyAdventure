@@ -92,7 +92,7 @@ public class GameTest {
         rooms.add(enemyRoom);
         game = new Game(magician, rooms);
         game.fight(enemyRoom);
-        assertEquals(95, magician.getHealthPoints());
+        assertEquals(108, magician.getHealthPoints());
     }
 
     @Test
@@ -100,7 +100,7 @@ public class GameTest {
         rooms.add(enemyRoom);
         game = new Game(healer, rooms);
         game.fight(enemyRoom);
-        assertEquals(95, healer.getHealthPoints());
+        assertEquals(105, healer.getHealthPoints());
     }
 
     @Test

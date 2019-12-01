@@ -7,7 +7,7 @@ public class Creature {
 
     public Creature(String name){
         this.name = name;
-        this.protectionPower = 3;
+        this.protectionPower = 10;
     }
 
     public String getName(){

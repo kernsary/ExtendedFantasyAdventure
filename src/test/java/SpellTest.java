@@ -20,7 +20,7 @@ public class SpellTest {
 
     @Test
     public void canGetPower() {
-        assertEquals(2, spell.getPower());
+        assertEquals(8, spell.getPower());
     }
 
     @Test

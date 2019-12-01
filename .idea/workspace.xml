@@ -49,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in FantasyAdventure">
+  <component name="RunManager" selected="Application.Runner">
     <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Runner" />
       <module name="FantasyAdventure" />
@@ -65,11 +65,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HealerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest.healerCanFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FantasyAdventure" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HealerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="GameTest" />
+      <option name="METHOD_NAME" value="healerCanFight" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest.magicianCanFight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FantasyAdventure" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameTest" />
+      <option name="METHOD_NAME" value="magicianCanFight" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -83,22 +94,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WarriorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FantasyAdventure" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WarriorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in FantasyAdventure" />
         <item itemvalue="Application.Runner" />
-        <item itemvalue="JUnit.WarriorTest" />
+        <item itemvalue="JUnit.All in FantasyAdventure" />
+        <item itemvalue="JUnit.GameTest.healerCanFight" />
+        <item itemvalue="JUnit.GameTest.magicianCanFight" />
         <item itemvalue="JUnit.MagicianTest" />
-        <item itemvalue="JUnit.HealerTest" />
       </list>
     </recent_temporary>
   </component>

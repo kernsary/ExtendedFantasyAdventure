@@ -11,8 +11,6 @@ import tools.Weapon;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static javax.xml.bind.DatatypeConverter.parseString;
-
 public class Runner {
 
     public static void main(String[] args) {
@@ -77,6 +75,7 @@ public class Runner {
             {
                 System.out.println("There is no treasure here");
             }
+
             if(room.getEnemy() != null){
                 System.out.println("Your enemy " + room.getEnemy().getName() + " is here. You must fight");
                 game.fight(room);
@@ -99,19 +98,20 @@ public class Runner {
             System.out.println();
 
             if(room.getOtherPlayer() != null && room.getOtherPlayer() instanceof Healer){
-                System.out.println("There is a healer in the room.");
+                System.out.println("There is a healer here.");
                 if(game.getPlayer().getTreasurePoints() >= 20){
                     System.out.println("Do you want the healer to heal you, for 20 treasure points?");
                     System.out.println("If you are healed, your life force will increase by 20");
-                    System.out.println("Enter y to be healed, any other key if not");
+                    System.out.println("Enter 'y' to be healed, any other key if not");
                     String input3 = scanner.next();
 
                     if(input3.equals("y")){
                         Healer roomHealer = ((Healer) room.getOtherPlayer());
                         Player player = game.getPlayer();
                         player.beHealed(roomHealer);
-                        System.out.println("Your life force is " + game.getPlayer().getHealthPoints());
+                        System.out.println("Your life force is now " + game.getPlayer().getHealthPoints());
                         System.out.println("You have " + game.getPlayer().getTreasurePoints() + " treasure points");
+                        System.out.println("The healer has " + room.getOtherPlayer().getTreasurePoints() + " treasure points");
                         System.out.println();
                     }
                     else {

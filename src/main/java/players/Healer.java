@@ -7,7 +7,7 @@ public class Healer extends Player{
     private HealingTool healingTool;
 
     public Healer(String name, HealingTool healingTool){
-        super(name, 100, 0, 0, 5);
+        super(name, 100, 0, 0, 15);
         this.healingTool = healingTool;
     }
 

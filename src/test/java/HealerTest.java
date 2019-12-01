@@ -42,7 +42,7 @@ public class HealerTest {
 
         @Test
         public void canGetDamageReduction() {
-            assertEquals(5, healer.getDamageReduction());
+            assertEquals(15, healer.getDamageReduction());
         }
 
         @Test
@@ -102,7 +102,7 @@ public class HealerTest {
         @Test
         public void canIncreaseDamageReduction() {
             healer.increaseDamageReduction(90);
-            assertEquals(95, healer.getDamageReduction());
+            assertEquals(105, healer.getDamageReduction());
         }
 
         @Test
