@@ -3,7 +3,7 @@
 This is a game written in Java as a Maven project using the IntelliJ IDE. The game is a 'text adventure' played in the console.
 To play the game, open the project in an IDE, run the Runner file, and enter text in the console when prompted.
 
-The project meets all the requirements of the brief below, although the version of the game played via the Runner file does not currently use all of the wider project's capabilities.
+The project meets all the requirements of the brief below, although the version of the game played via the Runner file does not currently use all of the wider project's capabilities. The project was begun as a lab with another CodeClan student and then extended as a solo homework project.
 
 
 Project brief:
